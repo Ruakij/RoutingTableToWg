@@ -1,3 +1,3 @@
-module RoutingTableToWgTranslator
+module routingtabletowg
 
 go 1.19
