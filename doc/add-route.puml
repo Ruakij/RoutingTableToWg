@@ -1,0 +1,28 @@
+@startuml
+autonumber
+hide footbox
+
+footer "RoutingTableToWg | Ruakij"
+
+title "Add Route"
+
+participant System
+control Program
+boundary Wireguard
+
+System ++
+Wireguard ++
+System ->> Program ++ : Add Route
+Program -> Program : Filter Route
+
+Program -> Wireguard ++ : Get current State
+Wireguard -> Program -- : State
+
+Program -> Program : Find Peer with Gateway\nfrom AllowedIPs
+
+Program -> Wireguard ++ : Add Dst-Net to\nAllowedIPs from Peer
+Wireguard --> Program --
+
+Program --
+
+@enduml
