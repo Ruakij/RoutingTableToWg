@@ -1,0 +1,28 @@
+@startuml
+autonumber
+hide footbox
+
+footer "RoutingTableToWg | Ruakij"
+
+title "Delete Route"
+
+participant System
+control Program
+boundary Wireguard
+
+System ++
+Wireguard ++
+System ->> Program ++ : Delete Route
+Program -> Program : Filter Route
+
+Program -> Wireguard ++ : Get current State
+Wireguard -> Program -- : State
+
+Program -> Program : Find Peer with Dst-Net\nfrom AllowedIPs
+
+Program -> Wireguard ++ : Remove Dst-Net from\nAllowedIPs from Peer
+Wireguard --> Program --
+
+Program --
+
+@enduml

@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="412px" preserveAspectRatio="none" style="width:368px;height:412px;background:#282C34;" version="1.1" viewBox="0 0 368 412" width="368px" zoomAndPan="magnify"><defs/><g><rect fill="#282C34" height="29.0679" id="_title" style="stroke:none;stroke-width:1.0;" width="99" x="136" y="10"/><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="89" x="141" y="29.9659">Delete Route</text><rect fill="none" height="284.3541" style="stroke:#61AFEF;stroke-width:1.0;" width="10" x="31" y="106.1358"/><rect fill="none" height="251.6481" style="stroke:#61AFEF;stroke-width:1.0;" width="10" x="148" y="129.8419"/><rect fill="none" height="284.3541" style="stroke:#61AFEF;stroke-width:1.0;" width="10" x="323" y="106.1358"/><rect fill="none" height="31.706" style="stroke:#61AFEF;stroke-width:1.0;" width="10" x="328" y="206.2539"/><rect fill="none" height="31.706" style="stroke:#61AFEF;stroke-width:1.0;" width="10" x="328" y="349.784"/><line style="stroke:#61AFEF;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="36" x2="36" y1="96.1358" y2="399.49"/><line style="stroke:#61AFEF;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="153" x2="153" y1="96.1358" y2="399.49"/><line style="stroke:#61AFEF;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="328" x2="328" y1="96.1358" y2="399.49"/><rect fill="#424856" height="33.0679" rx="2.5" ry="2.5" style="stroke:#61AFEF;stroke-width:0.5;" width="62" x="5" y="62.0679"/><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="14" lengthAdjust="spacing" textLength="48" x="12" y="84.0339">System</text><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="14" lengthAdjust="spacing" textLength="58" x="121" y="92.0339">Program</text><ellipse cx="153" cy="61.0679" fill="#424856" rx="12" ry="12" style="stroke:#61AFEF;stroke-width:0.5;"/><polygon fill="#61AFEF" points="149,49.0679,155,44.0679,153,49.0679,155,54.0679,149,49.0679" style="stroke:#61AFEF;stroke-width:1.0;"/><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="14" lengthAdjust="spacing" textLength="72" x="289" y="92.0339">Wireguard</text><path d="M307.5,49.0679 L307.5,73.0679 M307.5,61.0679 L324.5,61.0679 " fill="none" style="stroke:#61AFEF;stroke-width:0.5;"/><ellipse cx="336.5" cy="61.0679" fill="#424856" rx="12" ry="12" style="stroke:#61AFEF;stroke-width:0.5;"/><rect fill="none" height="284.3541" style="stroke:#61AFEF;stroke-width:1.0;" width="10" x="31" y="106.1358"/><rect fill="none" height="251.6481" style="stroke:#61AFEF;stroke-width:1.0;" width="10" x="148" y="129.8419"/><rect fill="none" height="284.3541" style="stroke:#61AFEF;stroke-width:1.0;" width="10" x="323" y="106.1358"/><rect fill="none" height="31.706" style="stroke:#61AFEF;stroke-width:1.0;" width="10" x="328" y="206.2539"/><rect fill="none" height="31.706" style="stroke:#61AFEF;stroke-width:1.0;" width="10" x="328" y="349.784"/><line style="stroke:#61AFEF;stroke-width:1.0;" x1="146" x2="136" y1="129.8419" y2="125.8419"/><line style="stroke:#61AFEF;stroke-width:1.0;" x1="146" x2="136" y1="129.8419" y2="133.8419"/><line style="stroke:#61AFEF;stroke-width:1.0;" x1="41" x2="147" y1="129.8419" y2="129.8419"/><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="48" y="124.0328">1</text><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" lengthAdjust="spacing" textLength="77" x="59" y="124.0328">Delete Route</text><line style="stroke:#61AFEF;stroke-width:1.0;" x1="158" x2="200" y1="161.5479" y2="161.5479"/><line style="stroke:#61AFEF;stroke-width:1.0;" x1="200" x2="200" y1="161.5479" y2="174.5479"/><line style="stroke:#61AFEF;stroke-width:1.0;" x1="159" x2="200" y1="174.5479" y2="174.5479"/><polygon fill="#61AFEF" points="169,170.5479,159,174.5479,169,178.5479,165,174.5479" style="stroke:#61AFEF;stroke-width:1.0;"/><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="165" y="155.7389">2</text><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" lengthAdjust="spacing" textLength="69" x="176" y="155.7389">Filter Route</text><polygon fill="#61AFEF" points="316,202.2539,326,206.2539,316,210.2539,320,206.2539" style="stroke:#61AFEF;stroke-width:1.0;"/><line style="stroke:#61AFEF;stroke-width:1.0;" x1="158" x2="322" y1="206.2539" y2="206.2539"/><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="165" y="200.4449">3</text><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" lengthAdjust="spacing" textLength="102" x="176" y="200.4449">Get current State</text><polygon fill="#61AFEF" points="169,233.9599,159,237.9599,169,241.9599,165,237.9599" style="stroke:#61AFEF;stroke-width:1.0;"/><line style="stroke:#61AFEF;stroke-width:1.0;" x1="163" x2="322" y1="237.9599" y2="237.9599"/><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="175" y="232.1509">4</text><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" lengthAdjust="spacing" textLength="31" x="186" y="232.1509">State</text><line style="stroke:#61AFEF;stroke-width:1.0;" x1="158" x2="200" y1="287.3719" y2="287.3719"/><line style="stroke:#61AFEF;stroke-width:1.0;" x1="200" x2="200" y1="287.3719" y2="300.3719"/><line style="stroke:#61AFEF;stroke-width:1.0;" x1="159" x2="200" y1="300.3719" y2="300.3719"/><polygon fill="#61AFEF" points="169,296.3719,159,300.3719,169,304.3719,165,300.3719" style="stroke:#61AFEF;stroke-width:1.0;"/><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="165" y="272.7099">5</text><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" lengthAdjust="spacing" textLength="134" x="176" y="263.8569">Find Peer with Dst-Net</text><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" lengthAdjust="spacing" textLength="97" x="176" y="281.5629">from AllowedIPs</text><polygon fill="#61AFEF" points="316,345.784,326,349.784,316,353.784,320,349.784" style="stroke:#61AFEF;stroke-width:1.0;"/><line style="stroke:#61AFEF;stroke-width:1.0;" x1="158" x2="322" y1="349.784" y2="349.784"/><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="165" y="335.122">6</text><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" lengthAdjust="spacing" textLength="130" x="176" y="326.2689">Remove Dst-Net from</text><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" lengthAdjust="spacing" textLength="127" x="176" y="343.975">AllowedIPs from Peer</text><polygon fill="#61AFEF" points="164,377.49,154,381.49,164,385.49,160,381.49" style="stroke:#61AFEF;stroke-width:1.0;"/><line style="stroke:#61AFEF;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="158" x2="322" y1="381.49" y2="381.49"/><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="170" y="375.681">7</text><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="13" lengthAdjust="spacing" textLength="3" x="181" y="375.681"> </text><rect fill="#282C34" height="13.62" id="_title" style="stroke:none;stroke-width:1.0;" width="132" x="119.5" y="390.49"/><text fill="#ABB2BF" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="10" lengthAdjust="spacing" textLength="132" x="119.5" y="401.18">RoutingTableToWg | Ruakij</text><!--MD5=[04e31b62ab51f24ece35214d9b2c2f57]
+@startuml
+
+!$color_bg           = "#282c34"
+!$color_bg_light     = "#424856"
+
+!$color_fg           = "#abb2bf"
+
+!$color_red          = "#e06c75"
+!$color_green        = "#98c379"
+!$color_yellow       = "#e5c07b"
+!$color_blue         = "#61afef"
+!$color_purple       = "#c678dd"
+!$color_teal         = "#56b6c2"
+
+skinparam backgroundColor $color_bg
+
+skinparam {
+  ActivityBackgroundColor        $color_bg_light
+  ActivityBarColor               $color_fg
+  ActivityBorderColor            $color_blue
+  ActivityDiamondBackgroundColor $color_bg_light
+  ActivityDiamondBorderColor     $color_blue
+  ActivityEndColor               $color_red
+  ActivityStartColor             $color_green
+
+  ActorBackgroundColor        $color_bg_light
+  ActorBorderColor            $color_blue
+  ActorStereotypeFontColor    $color_fg
+
+  AgentBackgroundColor       $color_bg_light
+  AgentBorderColor           $color_fg
+
+
+  ArrowColor $color_blue
+
+  ArtifactBackgroundColor     $color_bg_light
+  ArtifactBorderColor         $color_fg
+
+  BackgroundColor $color_bg
+
+
+  BoundaryBackgroundColor     $color_bg_light
+  BoundaryBorderColor         $color_blue
+  BoundaryStereotypeFontColor $color_fg
+
+
+  CaptionFontColor $color_fg
+
+  CardBackgroundColor     $color_bg_light
+  CardBorderColor         $color_fg
+
+  CircledCharacterFontColor $color_bg
+
+
+  ClassBackgroundColor   $color_bg_light
+  ClassBorderColor       $color_fg
+
+
+
+  CloudBorderColor     $color_fg
+
+  CollectionsBackgroundColor $color_bg_light
+  CollectionsBorderColor     $color_blue
+
+
+  ComponentBackgroundColor       $color_bg_light
+  ComponentBorderColor           $color_blue
+
+
+
+  ControlBackgroundColor $color_bg_light
+  ControlBorderColor     $color_blue
+  ControlFontColor       $color_fg
+  ControlStereotypeFontColor $color_fg
+
+  DatabaseBorderColor           $color_fg
+
+  DefaultFontColor $color_fg
+  DefaultFontName -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+
+
+
+
+
+
+
+
+  EntityBackgroundColor $color_bg_light
+  EntityBorderColor     $color_blue
+
+
+  FileBackgroundColor $color_bg_light
+  FileBorderColor     $color_fg
+
+
+
+  FolderBorderColor       $color_fg
+
+
+  FrameBorderColor           $color_fg
+
+
+  InterfaceBackgroundColor       $color_bg_light
+  InterfaceBorderColor           $color_blue
+
+  LegendBackgroundColor   $color_bg_light
+  LegendBorderColor       $color_fg
+
+
+  NodeBorderColor           $color_fg
+
+
+  NoteBackgroundColor   $color_yellow
+  NoteBorderColor       $color_bg
+  NoteFontColor         $color_bg
+
+  ObjectBackgroundColor       $color_bg_light
+  ObjectBorderColor           $color_blue
+
+  PackageBorderColor           $color_fg
+
+
+  ParticipantBackgroundColor $color_bg_light
+  ParticipantBorderColor     $color_blue
+
+  PartitionBackgroundColor transparent
+  PartitionBorderColor     $color_fg
+
+
+  QueueBackgroundColor       $color_bg_light
+  QueueBorderColor           $color_blue
+
+
+  RectangleBorderColor           $color_fg
+
+
+
+
+  SequenceBoxBackgroundColor $color_bg_light
+  SequenceBoxBorderColor     $color_blue
+
+
+  SequenceDividerBackgroundColor   $color_bg_light
+  SequenceDividerBorderColor       $color_fg
+
+  SequenceGroupBackgroundColor       $color_bg_light
+  SequenceGroupBorderColor           $color_fg
+
+  SequenceLifeLineBackgroundColor   transparent
+  SequenceLifeLineBorderColor       $color_blue
+
+  SequenceNewpageSeparatorColor  $color_fg
+
+
+  SequenceReferenceBackgroundColor        transparent
+  SequenceReferenceBorderColor            $color_fg
+  SequenceReferenceHeaderBackgroundColor $color_bg_light
+
+
+  Shadowing false
+
+  StackBackgroundColor       $color_bg_light
+  StackBorderColor           $color_blue
+
+
+  StateBackgroundColor    $color_bg_light
+  StateBorderColor        $color_blue
+  StateEndColor           $color_red
+  StateStartColor         $color_green
+
+  StereotypeABackgroundColor   $color_blue
+  StereotypeABorderColor       $color_blue
+  StereotypeCBackgroundColor   $color_green
+  StereotypeCBorderColor       $color_green
+  StereotypeEBackgroundColor   $color_yellow
+  StereotypeEBorderColor       $color_yellow
+  StereotypeIBackgroundColor   $color_purple
+  StereotypeIBorderColor       $color_purple
+
+  StorageBackgroundColor $color_bg_light
+  StorageBorderColor     $color_fg
+
+
+  SwimlaneBorderColor            $color_fg
+
+
+  UsecaseBackgroundColor       $color_bg_light
+  UsecaseBorderColor           $color_blue
+
+}
+autonumber
+hide footbox
+
+footer "RoutingTableToWg | Ruakij"
+
+title "Delete Route"
+
+participant System
+control Program
+boundary Wireguard
+
+System ++
+Wireguard ++
+System ->> Program ++ : Delete Route
+Program -> Program : Filter Route
+
+Program -> Wireguard ++ : Get current State
+Wireguard -> Program - - : State
+
+Program -> Program : Find Peer with Dst-Net\nfrom AllowedIPs
+
+Program -> Wireguard ++ : Remove Dst-Net from\nAllowedIPs from Peer
+Wireguard - -> Program - -
+
+Program - -
+
+@enduml
+
+@startuml
+
+
+
+
+skinparam backgroundColor #282c34
+
+skinparam {
+  ActivityBackgroundColor        #424856
+  ActivityBarColor               #abb2bf
+  ActivityBorderColor            #61afef
+  ActivityDiamondBackgroundColor #424856
+  ActivityDiamondBorderColor     #61afef
+  ActivityEndColor               #e06c75
+  ActivityStartColor             #98c379
+
+  ActorBackgroundColor        #424856
+  ActorBorderColor            #61afef
+  ActorStereotypeFontColor    #abb2bf
+
+  AgentBackgroundColor       #424856
+  AgentBorderColor           #abb2bf
+
+
+  ArrowColor #61afef
+
+  ArtifactBackgroundColor     #424856
+  ArtifactBorderColor         #abb2bf
+
+  BackgroundColor #282c34
+
+
+  BoundaryBackgroundColor     #424856
+  BoundaryBorderColor         #61afef
+  BoundaryStereotypeFontColor #abb2bf
+
+
+  CaptionFontColor #abb2bf
+
+  CardBackgroundColor     #424856
+  CardBorderColor         #abb2bf
+
+  CircledCharacterFontColor #282c34
+
+
+  ClassBackgroundColor   #424856
+  ClassBorderColor       #abb2bf
+
+
+
+  CloudBorderColor     #abb2bf
+
+  CollectionsBackgroundColor #424856
+  CollectionsBorderColor     #61afef
+
+
+  ComponentBackgroundColor       #424856
+  ComponentBorderColor           #61afef
+
+
+
+  ControlBackgroundColor #424856
+  ControlBorderColor     #61afef
+  ControlFontColor       #abb2bf
+  ControlStereotypeFontColor #abb2bf
+
+  DatabaseBorderColor           #abb2bf
+
+  DefaultFontColor #abb2bf
+  DefaultFontName -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+
+
+
+
+
+
+
+
+  EntityBackgroundColor #424856
+  EntityBorderColor     #61afef
+
+
+  FileBackgroundColor #424856
+  FileBorderColor     #abb2bf
+
+
+
+  FolderBorderColor       #abb2bf
+
+
+  FrameBorderColor           #abb2bf
+
+
+  InterfaceBackgroundColor       #424856
+  InterfaceBorderColor           #61afef
+
+  LegendBackgroundColor   #424856
+  LegendBorderColor       #abb2bf
+
+
+  NodeBorderColor           #abb2bf
+
+
+  NoteBackgroundColor   #e5c07b
+  NoteBorderColor       #282c34
+  NoteFontColor         #282c34
+
+  ObjectBackgroundColor       #424856
+  ObjectBorderColor           #61afef
+
+  PackageBorderColor           #abb2bf
+
+
+  ParticipantBackgroundColor #424856
+  ParticipantBorderColor     #61afef
+
+  PartitionBackgroundColor transparent
+  PartitionBorderColor     #abb2bf
+
+
+  QueueBackgroundColor       #424856
+  QueueBorderColor           #61afef
+
+
+  RectangleBorderColor           #abb2bf
+
+
+
+
+  SequenceBoxBackgroundColor #424856
+  SequenceBoxBorderColor     #61afef
+
+
+  SequenceDividerBackgroundColor   #424856
+  SequenceDividerBorderColor       #abb2bf
+
+  SequenceGroupBackgroundColor       #424856
+  SequenceGroupBorderColor           #abb2bf
+
+  SequenceLifeLineBackgroundColor   transparent
+  SequenceLifeLineBorderColor       #61afef
+
+  SequenceNewpageSeparatorColor  #abb2bf
+
+
+  SequenceReferenceBackgroundColor        transparent
+  SequenceReferenceBorderColor            #abb2bf
+  SequenceReferenceHeaderBackgroundColor #424856
+
+
+  Shadowing false
+
+  StackBackgroundColor       #424856
+  StackBorderColor           #61afef
+
+
+  StateBackgroundColor    #424856
+  StateBorderColor        #61afef
+  StateEndColor           #e06c75
+  StateStartColor         #98c379
+
+  StereotypeABackgroundColor   #61afef
+  StereotypeABorderColor       #61afef
+  StereotypeCBackgroundColor   #98c379
+  StereotypeCBorderColor       #98c379
+  StereotypeEBackgroundColor   #e5c07b
+  StereotypeEBorderColor       #e5c07b
+  StereotypeIBackgroundColor   #c678dd
+  StereotypeIBorderColor       #c678dd
+
+  StorageBackgroundColor #424856
+  StorageBorderColor     #abb2bf
+
+
+  SwimlaneBorderColor            #abb2bf
+
+
+  UsecaseBackgroundColor       #424856
+  UsecaseBorderColor           #61afef
+
+}
+autonumber
+hide footbox
+
+footer "RoutingTableToWg | Ruakij"
+
+title "Delete Route"
+
+participant System
+control Program
+boundary Wireguard
+
+System ++
+Wireguard ++
+System ->> Program ++ : Delete Route
+Program -> Program : Filter Route
+
+Program -> Wireguard ++ : Get current State
+Wireguard -> Program - - : State
+
+Program -> Program : Find Peer with Dst-Net\nfrom AllowedIPs
+
+Program -> Wireguard ++ : Remove Dst-Net from\nAllowedIPs from Peer
+Wireguard - -> Program - -
+
+Program - -
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>
