@@ -36,11 +36,19 @@ In case routes clash or cant be added to Wireguard, Warnings will be logged.
 
 ## 1.2. Install
 
+### 1.2.1. Environment
 
+Variable|Description|Default
+-|-|-
+`INTERFACE`*      | Wireguard-Interface Name  |
+`FILTER_PROTOCOL` | Protocol to react on      | All
+`FILTER_TABLE`    | Table to react on         | All
+
+*\* Required*
 
 <br>
 
-### 1.2.1. Docker
+### 1.2.2. Docker
 
 Depending on the needs, the Container can be run in `network_mode: host` to be able to accessrouting-tables and interfaces of the host. 
 
