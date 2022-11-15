@@ -55,7 +55,7 @@ func readFromFile(filePath string) (mapByName map[string]int, mapById map[int]st
 	// Go through file line-by-line
     for scanner.Scan() {
 		text := scanner.Text()
-		if(strings.HasPrefix(text, "#") || text == ""){
+		if(text == "" || strings.HasPrefix(text, "#")){
 			continue
 		}
 
