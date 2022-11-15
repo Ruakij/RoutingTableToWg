@@ -36,13 +36,23 @@ In case routes clash or cant be added to Wireguard, Warnings will be logged.
 
 ## 1.2. Install
 
+### 1.2.1. Environment
 
+Variable|Description|Default
+-|-|-
+`INTERFACE`*      | Wireguard-Interface Name  |
+`FILTER_PROTOCOL` | Protocol to react on      | All
+`FILTER_TABLE`    | Table to react on         | All
+
+*\* Required*
 
 <br>
 
-### 1.2.1. Docker
+### 1.2.2. Docker
 
-Depending on the needs, the Container can be run in `network_mode: host` to be able to accessrouting-tables and interfaces of the host. 
+Depending on the needs, the Container can be run in `network_mode: host` to be able to access routing-tables and interfaces of the host.
+
+Additionally the capability `NET_ADMIN` is required for interacting with interfaces.
 
 <details><summary><code>docker-compose.yml</code></summary>
 
@@ -53,7 +63,9 @@ services:
   routingTableWGTranslator:
     image: ruakij/RoutingTableWGTranslator
     restart: unless-stopped
-    network_mode: "host"
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
     environment:
       - INTERFACE="<wgInterfaceName or empty for wg0>"
 ```
@@ -61,7 +73,7 @@ services:
 
 <br>
 
-### 1.2.2. Without Docker
+### 1.2.3. Without Docker
 
 Clone the Repository `git clone <URI>` and build the Program with `go build cmd/app`
 
