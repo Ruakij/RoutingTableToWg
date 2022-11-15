@@ -5,5 +5,5 @@ EXTRA_ARGS="$@"
 docker buildx build \
 --platform $PLATFORM \
 --tag $TAG \
-$EXTRA_ARGS
+$EXTRA_ARGS \
 .
