@@ -37,6 +37,11 @@ func main() {
 	iface := os.Getenv("INTERFACE")
 	//MANAGE_ALL = os.Getenv("MANAGE_ALL")
 
+	// Check if ip2Map has init-errors
+	for _, err := range ip2Map.Errors {
+		logger.Warn.Printf("iproute2mapping: %s", err)
+	}
+
 	// Parse filter-env-vars
 	filterProtocolStr := os.Getenv("FILTER_PROTOCOL")
 	filterProtocol, err := ip2Map.TryGetId(ip2Map.PROTOCOL, filterProtocolStr)

@@ -60,8 +60,8 @@ Additionally the capability `NET_ADMIN` is required for interacting with interfa
 version: '3'
 
 services:
-  routingTableWGTranslator:
-    image: ruakij/RoutingTableWGTranslator
+  routingtabletowg:
+    image: ruakij/routingtabletowg
     restart: unless-stopped
     network_mode: host
     cap_add:
