@@ -2,6 +2,9 @@
 FROM alpine:3 AS base
 WORKDIR /app
 
+# Install necessary packages
+RUN apk add --no-cache iproute2
+
 
 # ---- Build ----
 FROM golang:1.19-alpine AS build

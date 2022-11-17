@@ -3,7 +3,6 @@ module git.ruekov.eu/ruakij/routingtabletowg
 go 1.19
 
 require (
-	github.com/jsimonetti/rtnetlink v1.2.3
 	github.com/vishvananda/netlink v1.1.0
 	golang.org/x/sys v0.1.0
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20221104135756-97bc4ad4a1cb

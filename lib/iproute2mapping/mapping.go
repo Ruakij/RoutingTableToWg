@@ -32,9 +32,9 @@ func init() {
 	for mapType, filePath := range filePaths{
 		ByName[mapType], ById[mapType], err = readFromFile(filePath)
 		if(err != nil){
-			Errors = []error{
-				fmt.Errorf("failed reading iproute2 mapping-file '%s': %s", filePath, err),
-				};
+			Errors = append(Errors,
+				fmt.Errorf("failed reading mapping-file '%s': %s", filePath, err),
+			);
 		}
 	}
 }
@@ -55,7 +55,7 @@ func readFromFile(filePath string) (mapByName map[string]int, mapById map[int]st
 	// Go through file line-by-line
     for scanner.Scan() {
 		text := scanner.Text()
-		if(strings.HasPrefix(text, "#") || text == ""){
+		if(text == "" || strings.HasPrefix(text, "#")){
 			continue
 		}
 
