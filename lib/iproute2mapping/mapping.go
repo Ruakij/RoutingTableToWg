@@ -32,9 +32,9 @@ func init() {
 	for mapType, filePath := range filePaths{
 		ByName[mapType], ById[mapType], err = readFromFile(filePath)
 		if(err != nil){
-			Errors = []error{
-				fmt.Errorf("failed reading iproute2 mapping-file '%s': %s", filePath, err),
-				};
+			Errors = append(Errors,
+				fmt.Errorf("failed reading mapping-file '%s': %s", filePath, err),
+			);
 		}
 	}
 }
