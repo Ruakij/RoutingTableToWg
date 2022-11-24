@@ -87,6 +87,19 @@ Then you can run it with `./app`
 
 ![](doc/add-route.svg)
 
+```mermaid
+sequenceDiagram
+  System ->> + Program : Add Route
+  Program  ->> Program : Filter Route
+
+  deactivate Program
+
+    Alice->> John: Hello John, how are you?
+    Alice->>+John: John, can you hear me?
+    John-->>-Alice: Hi Alice, I can hear you!
+    John-->>Alice: I feel great!
+```
+
 <br>
 
 ## 2.2. Deleting Route
