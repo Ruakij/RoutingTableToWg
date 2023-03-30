@@ -91,22 +91,27 @@ func main() {
 	if err != nil {
 		logger.Error.Fatalf("Couldn't get route-entries: %s", err)
 	}
-
+	
 	logger.Info.Printf("Initially setting all current routes")
+	syncCurrentRoutesToHandler(routeSubChan, routeList)
+	
+	select {}
+}
+
+func syncCurrentRoutesToHandler(routeSubChan chan netlink.RouteUpdate, routeList []netlink.Route){
+	
 	for _, route := range routeList {
 		// Ignore routes with empty gateway
 		if(route.Gw == nil){
 			continue
 		}
-
+	
 		// Send current routes to handler
 		routeSubChan <- netlink.RouteUpdate{
 			Type:  unix.RTM_NEWROUTE,
 			Route: route,
 		}
 	}
-
-	select {}
 }
 
 var routeUpdateTypeMapFromId = map[uint16]string{
