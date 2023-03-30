@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net"
 
-	"git.ruekov.eu/ruakij/routingtabletowg/lib/netchecks"
+	"git.ruekov.eu/ruakij/routingtabletowg/lib/wgchecks/netchecks"
 
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 )
