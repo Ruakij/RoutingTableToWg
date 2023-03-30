@@ -4,6 +4,7 @@ import (
 	"net"
 	"os"
 	"strconv"
+	"time"
 
 	envChecks "git.ruekov.eu/ruakij/routingtabletowg/lib/environmentchecks"
 	ip2Map "git.ruekov.eu/ruakij/routingtabletowg/lib/iproute2mapping"
@@ -104,7 +105,27 @@ func main() {
 	logger.Info.Printf("Initially setting all current routes")
 	syncCurrentRoutesToHandler(routeSubChan, routeList)
 	
+	if(periodicSync > 0){
+		go runPeriodicSync(periodicSync, link, routeSubChan)
+	}
+
 	select {}
+}
+
+func runPeriodicSync(seconds int, link netlink.Link, routeSubChan chan netlink.RouteUpdate){
+	interval := time.Duration(seconds) * time.Second
+	for {
+		time.Sleep(interval)
+
+		// Get routing-table entries from device
+		routeList, err := netlink.RouteList(link, netlink.FAMILY_ALL)
+		if err != nil {
+			logger.Error.Fatalf("Couldn't get route-entries: %s", err)
+		}
+		
+		logger.Info.Printf("Periodically syncing all routes")
+		syncCurrentRoutesToHandler(routeSubChan, routeList)
+	}
 }
 
 func syncCurrentRoutesToHandler(routeSubChan chan netlink.RouteUpdate, routeList []netlink.Route){
