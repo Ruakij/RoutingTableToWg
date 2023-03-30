@@ -68,7 +68,7 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      - INTERFACE="<wgInterfaceName or empty for wg0>"
+      - INTERFACE=<wgInterfaceName or empty for wg0>
 ```
 </details>
 
