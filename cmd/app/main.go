@@ -3,6 +3,7 @@ package main
 import (
 	"net"
 	"os"
+	"strconv"
 
 	envChecks "git.ruekov.eu/ruakij/routingtabletowg/lib/environmentchecks"
 	ip2Map "git.ruekov.eu/ruakij/routingtabletowg/lib/iproute2mapping"
@@ -24,6 +25,8 @@ var envDefaults = map[string]string{
 
 	"FILTER_PROTOCOL": "-1",
 	"FILTER_TABLE":    "-1",
+
+	"PERIODIC_SYNC": "-1",
 }
 
 func main() {
@@ -53,6 +56,12 @@ func main() {
 	filterTable, err := ip2Map.TryGetId(ip2Map.TABLE, filterTableStr)
 	if err != nil {
 		logger.Error.Fatalf("Couldn't read FILTER_TABLE '%s': %s", filterTableStr, err)
+	}
+
+	periodicSyncStr := os.Getenv("PERIODIC_SYNC")
+	periodicSync, err := strconv.Atoi(periodicSyncStr)
+	if err != nil {
+		logger.Error.Fatalf("Couldn't read PERIODIC_SYNC '%s': %s", periodicSyncStr, err)
 	}
 
 	// Create filter
