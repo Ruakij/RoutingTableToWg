@@ -38,11 +38,12 @@ In case routes clash or cant be added to Wireguard, Warnings will be logged.
 
 ### 1.2.1. Environment
 
-Variable|Description|Default
--|-|-
-`INTERFACE`*      | Wireguard-Interface Name  |
-`FILTER_PROTOCOL` | Protocol to react on      | All
-`FILTER_TABLE`    | Table to react on         | All
+Variable|Description|Type|Default
+-|-|-|-
+`INTERFACE`*      | Wireguard-Interface Name | String       |
+`FILTER_PROTOCOL` | Protocol to react on | Number / iproute2-name  | All
+`FILTER_TABLE`    | Table to react on | Number / iproute2-name  | All
+`PERIODIC_SYNC`   | Reguarly sync the routing-table <br> Useful when the wg-interface is changed/updated without us knowing  | Seconds  | -1
 
 *\* Required*
 
@@ -67,7 +68,7 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      - INTERFACE="<wgInterfaceName or empty for wg0>"
+      - INTERFACE=<wgInterfaceName or empty for wg0>
 ```
 </details>
 

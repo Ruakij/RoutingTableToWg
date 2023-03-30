@@ -3,6 +3,8 @@ package main
 import (
 	"net"
 	"os"
+	"strconv"
+	"time"
 
 	envChecks "git.ruekov.eu/ruakij/routingtabletowg/lib/environmentchecks"
 	ip2Map "git.ruekov.eu/ruakij/routingtabletowg/lib/iproute2mapping"
@@ -24,6 +26,8 @@ var envDefaults = map[string]string{
 
 	"FILTER_PROTOCOL": "-1",
 	"FILTER_TABLE":    "-1",
+
+	"PERIODIC_SYNC": "-1",
 }
 
 func main() {
@@ -53,6 +57,12 @@ func main() {
 	filterTable, err := ip2Map.TryGetId(ip2Map.TABLE, filterTableStr)
 	if err != nil {
 		logger.Error.Fatalf("Couldn't read FILTER_TABLE '%s': %s", filterTableStr, err)
+	}
+
+	periodicSyncStr := os.Getenv("PERIODIC_SYNC")
+	periodicSync, err := strconv.Atoi(periodicSyncStr)
+	if err != nil {
+		logger.Error.Fatalf("Couldn't read PERIODIC_SYNC '%s': %s", periodicSyncStr, err)
 	}
 
 	// Create filter
@@ -91,22 +101,47 @@ func main() {
 	if err != nil {
 		logger.Error.Fatalf("Couldn't get route-entries: %s", err)
 	}
-
+	
 	logger.Info.Printf("Initially setting all current routes")
+	syncCurrentRoutesToHandler(routeSubChan, routeList)
+	
+	if(periodicSync > 0){
+		go runPeriodicSync(periodicSync, link, routeSubChan)
+	}
+
+	select {}
+}
+
+func runPeriodicSync(seconds int, link netlink.Link, routeSubChan chan netlink.RouteUpdate){
+	interval := time.Duration(seconds) * time.Second
+	for {
+		time.Sleep(interval)
+
+		// Get routing-table entries from device
+		routeList, err := netlink.RouteList(link, netlink.FAMILY_ALL)
+		if err != nil {
+			logger.Error.Fatalf("Couldn't get route-entries: %s", err)
+		}
+		
+		logger.Info.Printf("Periodically syncing all routes")
+		syncCurrentRoutesToHandler(routeSubChan, routeList)
+	}
+}
+
+func syncCurrentRoutesToHandler(routeSubChan chan netlink.RouteUpdate, routeList []netlink.Route){
+	
 	for _, route := range routeList {
 		// Ignore routes with empty gateway
 		if(route.Gw == nil){
 			continue
 		}
-
+	
 		// Send current routes to handler
 		routeSubChan <- netlink.RouteUpdate{
 			Type:  unix.RTM_NEWROUTE,
 			Route: route,
 		}
 	}
-
-	select {}
 }
 
 var routeUpdateTypeMapFromId = map[uint16]string{
