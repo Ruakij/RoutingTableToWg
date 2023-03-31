@@ -201,13 +201,13 @@ func handleRouteEvents(routeSubChan <-chan netlink.RouteUpdate, filterOptions Fi
 			}
 
 			// Check if other peer already has exact same dst
-			if peer, err := wgChecks.PeerByIPNet(wgDevice.Peers, *route.Dst); err == nil {
+			if peer, err := wgChecks.PeerByIPNet(&wgDevice.Peers, route.Dst); err == nil {
 				logger.Warn.Printf("dst-IPNet already set for Peer '%s', ignoring", peer.PublicKey)
 				continue
 			}
 
 			// Get peer containing gateway-addr
-			peer, err := wgChecks.PeerByIP(wgDevice.Peers, route.Gw)
+			peer, err := wgChecks.PeerByIP(&wgDevice.Peers, &route.Gw)
 			if(err != nil){
 				logger.Warn.Printf("No peer found containing gw-IP '%s', ignoring", route.Gw)
 				continue
@@ -223,7 +223,7 @@ func handleRouteEvents(routeSubChan <-chan netlink.RouteUpdate, filterOptions Fi
 
 		case unix.RTM_DELROUTE:
 			// Get peer containing dst-NetIP
-			peerIndex, ipNetIndex, err := wgChecks.PeerIndexByIPNet(wgDevice.Peers, *route.Dst)
+			peerIndex, ipNetIndex, err := wgChecks.PeerIndexByIPNet(&wgDevice.Peers, route.Dst)
 			if(err != nil){
 				logger.Warn.Printf("No peer found having dst-IPNet '%s', ignoring", route.Dst)
 				continue
