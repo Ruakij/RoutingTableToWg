@@ -1,25 +1,30 @@
-# ---- Base ----
-FROM alpine:3 AS base
+# Cross-compiling from the build platform, so a multi-arch build needs no
+# emulated toolchain.
+FROM --platform=$BUILDPLATFORM golang:1.27-alpine AS build
+
+ARG TARGETOS
+ARG TARGETARCH
+
+WORKDIR /build
+
+COPY go.mod go.sum ./
+RUN go mod download
+
+COPY . .
+RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} \
+    go build -trimpath -ldflags "-s -w" -o app ./cmd/app
+
+
+# The binary reads protocol and table names from /etc/iproute2, but the Alpine
+# package installs them to /usr/share/iproute2, so they are copied over. Alpine
+# also keeps a shell and ip for debugging.
+FROM alpine:3.24 AS release
+
+RUN apk add --no-cache iproute2 \
+    && cp -r /usr/share/iproute2 /etc/iproute2
+
 WORKDIR /app
 
-# Install necessary packages
-RUN apk add --no-cache iproute2
-
-
-# ---- Build ----
-FROM golang:1.19-alpine AS build
-WORKDIR /build
-# Copy sources
-ADD . .
-# Get dependencies
-RUN go get ./cmd/app
-# Compile
-RUN CGO_ENABLED=0 go build -a -o app ./cmd/app
-
-
-# ---- Release ----
-FROM base AS release
-# Copy build-target
 COPY --from=build /build/app .
 
-CMD ["./app"]  
+CMD ["./app"]

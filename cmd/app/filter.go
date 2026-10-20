@@ -11,7 +11,7 @@ type FilterOptions struct {
 
 func CheckFilter(options FilterOptions, route netlink.Route) bool {
 	if (options.Table != -1 && options.Table != route.Table) ||
-		(options.Protocol != -1 && options.Protocol != route.Protocol) {
+		(options.Protocol != -1 && options.Protocol != int(route.Protocol)) {
 		return false
 	}
 	return true
