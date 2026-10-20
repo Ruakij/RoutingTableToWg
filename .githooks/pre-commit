@@ -1,0 +1,30 @@
+#!/bin/sh
+set -e
+
+go mod tidy -diff
+
+files=$(git diff --cached --name-only --diff-filter=ACM -- '*.go')
+[ -n "$files" ] || exit 0
+pkgs=$(echo "$files" | xargs -n1 dirname | sort -u | sed 's|^|./|')
+
+unformatted=$(gofmt -l $files)
+if [ -n "$unformatted" ]; then
+	echo "gofmt: $unformatted" >&2
+	exit 1
+fi
+
+# The program is Linux-only (netlink), so everything is checked for Linux.
+export GOOS=linux
+
+go vet $pkgs
+
+# Test binaries only run on a Linux host; elsewhere they are compiled, not run.
+if [ "$(go env GOHOSTOS)" = linux ]; then
+	go test -race $pkgs
+else
+	go test -exec /usr/bin/true $pkgs
+fi
+
+if command -v golangci-lint >/dev/null; then
+	golangci-lint run $pkgs
+fi

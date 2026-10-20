@@ -62,7 +62,7 @@ version: '3'
 
 services:
   routingtabletowg:
-    image: ruakij/routingtabletowg
+    image: ghcr.io/ruakij/routingtabletowg
     restart: unless-stopped
     network_mode: host
     cap_add:
@@ -76,9 +76,21 @@ services:
 
 ### 1.2.3. Without Docker
 
-Clone the Repository `git clone <URI>` and build the Program with `go build cmd/app`
+Requires Go 1.27.3 or newer and Linux.
 
-Then you can run it with `./app`
+Clone the Repository `git clone <URI>` and build the Program with `make build` (or `go build ./cmd/app`)
+
+Then you can run it with `./bin/routingtabletowg`
+
+<br>
+
+### 1.2.4. Development
+
+Enable the pre-commit hook (formatting, `go vet`, tests, `golangci-lint`) with `git config core.hooksPath .githooks`.
+
+The program only builds for Linux; on other systems set `GOOS=linux` for `go vet` and `golangci-lint`.
+
+CI runs on GitHub Actions. Pushing a tag like `1.2.3` publishes `ghcr.io/ruakij/routingtabletowg` for `linux/amd64`, `linux/arm64` and `linux/arm/v7` and creates a GitHub release.
 
 <br>
 
