@@ -42,21 +42,21 @@ In case routes clash or cant be added to Wireguard, Warnings will be logged.
 
 Variable|Description|Type|Default
 -|-|-|-
-`INTERFACE`*      | Wireguard-Interface Name | String       |
+`INTERFACE`       | Wireguard-Interface Name, empty for the default | String       | wg0
 `FILTER_PROTOCOL` | Protocol to react on | Number / iproute2-name  | All
 `FILTER_TABLE`    | Table to react on | Number / iproute2-name  | All
 `PERIODIC_SYNC`   | Reguarly sync the routing-table <br> Useful when the wg-interface is changed/updated without us knowing  | Seconds  | -1
 `PROTECTED_PREFIXES` | Prefixes that are never added, moved or removed, see [2.3](#23-ownership-of-allowedips) | Comma-separated CIDRs  | -
 
-*\* Required*
+Protocol and table names are read from `rt_protos` and `rt_tables`, and the `*.conf` files in `rt_protos.d` and `rt_tables.d`, in `/usr/share/iproute2` and `/etc/iproute2`. Entries in `/etc/iproute2` take precedence.
 
 <br>
 
 ### 1.2.2. Docker
 
-Depending on the needs, the Container can be run in `network_mode: host` to be able to access routing-tables and interfaces of the host.
+The Container has to run in the network namespace of the Wireguard-Interface, which is the host for most setups. That makes it `network_mode: host`, as the routing-tables and interfaces are only visible there.
 
-Additionally the capability `NET_ADMIN` is required for interacting with interfaces.
+The only required capability is `NET_ADMIN`, for interacting with interfaces. All others can be dropped.
 
 <details><summary><code>docker-compose.yml</code></summary>
 
@@ -68,6 +68,8 @@ services:
     image: ghcr.io/ruakij/routingtabletowg
     restart: unless-stopped
     network_mode: host
+    cap_drop:
+      - ALL
     cap_add:
       - NET_ADMIN
     environment:
@@ -81,7 +83,7 @@ services:
 
 Requires Go 1.27.3 or newer and Linux.
 
-Clone the Repository `git clone <URI>` and build the Program with `make build` (or `go build ./cmd/app`)
+Clone the Repository `git clone <URI>` and build the Program with `make build` (or `go build -o bin/routingtabletowg ./cmd/app`)
 
 Then you can run it with `./bin/routingtabletowg`
 

@@ -15,9 +15,6 @@ import (
 	"golang.zx2c4.com/wireguard/wgctrl"
 )
 
-var envRequired = []string{
-	"INTERFACE",
-}
 var envDefaults = map[string]string{
 	"INTERFACE": "wg0",
 	// "MANAGE_ALL": "true",
@@ -30,10 +27,6 @@ var envDefaults = map[string]string{
 
 func main() {
 	// Environment-vars
-	err := envChecks.HandleRequired(envRequired)
-	if err != nil {
-		logger.Error.Fatal(err)
-	}
 	envChecks.HandleDefaults(envDefaults)
 
 	iface := os.Getenv("INTERFACE")

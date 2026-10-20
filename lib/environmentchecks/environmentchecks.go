@@ -1,27 +1,14 @@
 package environmentchecks
 
 import (
-	"fmt"
 	"os"
 )
 
+// HandleDefaults sets every env that is unset or empty to its default.
 func HandleDefaults(envDefaults map[string]string) {
 	for env, defaultValue := range envDefaults {
-		// Check if env is set
-		_, isSet := os.LookupEnv(env)
-		if !isSet {
+		if os.Getenv(env) == "" {
 			os.Setenv(env, defaultValue)
 		}
 	}
-}
-
-func HandleRequired(envRequired []string) error {
-	for _, env := range envRequired {
-		// Check if env is set
-		_, isSet := os.LookupEnv(env)
-		if !isSet {
-			return fmt.Errorf("env '%s' required, but not set", env)
-		}
-	}
-	return nil
 }
