@@ -33,7 +33,7 @@ var envDefaults = map[string]string{
 func main() {
 	// Environment-vars
 	err := envChecks.HandleRequired(envRequired)
-	if(err != nil){
+	if err != nil {
 		logger.Error.Fatal(err)
 	}
 	envChecks.HandleDefaults(envDefaults)
@@ -67,7 +67,7 @@ func main() {
 
 	// Create filter
 	filterOptions := FilterOptions{
-		Table: filterTable,
+		Table:    filterTable,
 		Protocol: filterProtocol,
 	}
 
@@ -88,7 +88,6 @@ func main() {
 		logger.Error.Fatalf("Couldn't get wg-interface '%s': %s", iface, err)
 	}
 
-	
 	// Subscribe to route-change events
 	routeSubChan, routeSubDoneChan := make(chan netlink.RouteUpdate), make(chan struct{})
 
@@ -101,18 +100,18 @@ func main() {
 	if err != nil {
 		logger.Error.Fatalf("Couldn't get route-entries: %s", err)
 	}
-	
+
 	logger.Info.Printf("Initially setting all current routes")
 	syncCurrentRoutesToHandler(routeSubChan, routeList)
-	
-	if(periodicSync > 0){
+
+	if periodicSync > 0 {
 		go runPeriodicSync(periodicSync, link, routeSubChan)
 	}
 
 	select {}
 }
 
-func runPeriodicSync(seconds int, link netlink.Link, routeSubChan chan netlink.RouteUpdate){
+func runPeriodicSync(seconds int, link netlink.Link, routeSubChan chan netlink.RouteUpdate) {
 	interval := time.Duration(seconds) * time.Second
 	for {
 		time.Sleep(interval)
@@ -122,20 +121,20 @@ func runPeriodicSync(seconds int, link netlink.Link, routeSubChan chan netlink.R
 		if err != nil {
 			logger.Error.Fatalf("Couldn't get route-entries: %s", err)
 		}
-		
+
 		logger.Info.Printf("Periodically syncing all routes")
 		syncCurrentRoutesToHandler(routeSubChan, routeList)
 	}
 }
 
-func syncCurrentRoutesToHandler(routeSubChan chan netlink.RouteUpdate, routeList []netlink.Route){
-	
+func syncCurrentRoutesToHandler(routeSubChan chan netlink.RouteUpdate, routeList []netlink.Route) {
+
 	for _, route := range routeList {
 		// Ignore routes with empty gateway
-		if(route.Gw == nil){
+		if route.Gw == nil {
 			continue
 		}
-	
+
 		// Send current routes to handler
 		routeSubChan <- netlink.RouteUpdate{
 			Type:  unix.RTM_NEWROUTE,
@@ -148,6 +147,7 @@ var routeUpdateTypeMapFromId = map[uint16]string{
 	unix.RTM_NEWROUTE: "+",
 	unix.RTM_DELROUTE: "-",
 }
+
 // TODO: Add proxy to apply filter in channels rather than.. this mess
 func handleRouteEvents(routeSubChan <-chan netlink.RouteUpdate, filterOptions FilterOptions, iface string) {
 	// Create wg-client
@@ -155,27 +155,27 @@ func handleRouteEvents(routeSubChan <-chan netlink.RouteUpdate, filterOptions Fi
 	if err != nil {
 		logger.Error.Fatalf("Couldn't create wgctl-client: %s", err)
 	}
-	
+
 	for {
 		// Receive Route-Updates
 		routeUpdate := <-routeSubChan
 		route := routeUpdate.Route
 
 		// Check filter
-		if(!CheckFilter(filterOptions, routeUpdate.Route)){
+		if !CheckFilter(filterOptions, routeUpdate.Route) {
 			continue
 		}
-		
+
 		// Special case for default-route
-		if route.Dst == nil{
+		if route.Dst == nil {
 			if route.Gw.To4() != nil { // IPv4
 				route.Dst = &net.IPNet{
-					IP: net.IPv4zero,
+					IP:   net.IPv4zero,
 					Mask: net.CIDRMask(0, 32),
 				}
 			} else { // IPv6
 				route.Dst = &net.IPNet{
-					IP: net.IPv6zero,
+					IP:   net.IPv6zero,
 					Mask: net.CIDRMask(0, 128),
 				}
 			}
@@ -192,10 +192,10 @@ func handleRouteEvents(routeSubChan <-chan netlink.RouteUpdate, filterOptions Fi
 		// Empty config for filling in switch
 		var wgConfig wgtypes.Config
 
-		switch routeUpdate.Type{
+		switch routeUpdate.Type {
 		case unix.RTM_NEWROUTE:
 			// Check if gateway is set
-			if route.Gw == nil{
+			if route.Gw == nil {
 				logger.Warn.Printf("Gateway unset, ignoring")
 				continue
 			}
@@ -208,7 +208,7 @@ func handleRouteEvents(routeSubChan <-chan netlink.RouteUpdate, filterOptions Fi
 
 			// Get peer containing gateway-addr
 			peer, err := wgChecks.PeerByIP(&wgDevice.Peers, &route.Gw)
-			if(err != nil){
+			if err != nil {
 				logger.Warn.Printf("No peer found containing gw-IP '%s', ignoring", route.Gw)
 				continue
 			}
@@ -216,7 +216,7 @@ func handleRouteEvents(routeSubChan <-chan netlink.RouteUpdate, filterOptions Fi
 			// Set peerConfig, this will override set values for that peer
 			wgConfig.Peers = []wgtypes.PeerConfig{
 				{
-					PublicKey: peer.PublicKey,
+					PublicKey:  peer.PublicKey,
 					AllowedIPs: append(peer.AllowedIPs, *route.Dst),
 				},
 			}
@@ -224,7 +224,7 @@ func handleRouteEvents(routeSubChan <-chan netlink.RouteUpdate, filterOptions Fi
 		case unix.RTM_DELROUTE:
 			// Get peer containing dst-NetIP
 			peerIndex, ipNetIndex, err := wgChecks.PeerIndexByIPNet(&wgDevice.Peers, route.Dst)
-			if(err != nil){
+			if err != nil {
 				logger.Warn.Printf("No peer found having dst-IPNet '%s', ignoring", route.Dst)
 				continue
 			}
@@ -237,17 +237,17 @@ func handleRouteEvents(routeSubChan <-chan netlink.RouteUpdate, filterOptions Fi
 			// Set peerConfig, this will override set values for that peer
 			wgConfig.Peers = []wgtypes.PeerConfig{
 				{
-					PublicKey: peer.PublicKey,
+					PublicKey:  peer.PublicKey,
 					UpdateOnly: true,
 
 					ReplaceAllowedIPs: true,
-					AllowedIPs: peer.AllowedIPs,
+					AllowedIPs:        peer.AllowedIPs,
 				},
 			}
 		}
 
 		err = client.ConfigureDevice(iface, wgConfig)
-		if(err != nil){
+		if err != nil {
 			logger.Error.Fatalf("Error configuring wg-device '%s': %s", iface, err)
 		}
 	}

@@ -19,7 +19,7 @@ func PeerIndexByIP(peers *[]wgtypes.Peer, ip *net.IP) (int, int, error) {
 }
 func PeerByIP(peers *[]wgtypes.Peer, ip *net.IP) (*wgtypes.Peer, error) {
 	index, _, err := PeerIndexByIP(peers, ip)
-	if(err != nil) {
+	if err != nil {
 		return nil, err
 	}
 	return &(*peers)[index], nil
@@ -35,7 +35,7 @@ func PeerIndexByIPNet(peers *[]wgtypes.Peer, ipNet *net.IPNet) (int, int, error)
 }
 func PeerByIPNet(peers *[]wgtypes.Peer, ipNet *net.IPNet) (*wgtypes.Peer, error) {
 	index, _, err := PeerIndexByIPNet(peers, ipNet)
-	if(err != nil) {
+	if err != nil {
 		return nil, err
 	}
 	return &(*peers)[index], nil

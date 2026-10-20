@@ -1,25 +1,25 @@
 package environmentchecks
 
 import (
-	"os"
 	"fmt"
+	"os"
 )
 
-func HandleDefaults(envDefaults map[string]string){
-	for env, defaultValue := range envDefaults{
+func HandleDefaults(envDefaults map[string]string) {
+	for env, defaultValue := range envDefaults {
 		// Check if env is set
 		_, isSet := os.LookupEnv(env)
-		if(!isSet){
+		if !isSet {
 			os.Setenv(env, defaultValue)
 		}
 	}
 }
 
 func HandleRequired(envRequired []string) error {
-	for _, env := range envRequired{
+	for _, env := range envRequired {
 		// Check if env is set
 		_, isSet := os.LookupEnv(env)
-		if(!isSet){
+		if !isSet {
 			return fmt.Errorf("env '%s' required, but not set", env)
 		}
 	}
