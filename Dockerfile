@@ -16,13 +16,11 @@ RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} GOARM=${TARGETVARIANT#v}
     go build -trimpath -ldflags "-s -w" -o app ./cmd/app
 
 
-# The binary reads protocol and table names from /etc/iproute2, but the Alpine
-# package installs them to /usr/share/iproute2, so they are copied over. Alpine
+# The binary reads protocol and table names from the iproute2 package. Alpine
 # also keeps a shell and ip for debugging.
 FROM alpine:3.24 AS release
 
-RUN apk add --no-cache iproute2 \
-    && cp -r /usr/share/iproute2 /etc/iproute2
+RUN apk add --no-cache iproute2
 
 WORKDIR /app
 
