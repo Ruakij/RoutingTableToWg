@@ -33,7 +33,7 @@ func init() {
 		ByName[mapType], ById[mapType], err = readFromFile(filePath)
 		if err != nil {
 			Errors = append(Errors,
-				fmt.Errorf("failed reading mapping-file '%s': %s", filePath, err),
+				fmt.Errorf("failed reading mapping-file '%s': %w", filePath, err),
 			)
 		}
 	}
@@ -63,7 +63,7 @@ func readFromFile(filePath string) (mapByName map[string]int, mapById map[int]st
 		if err != nil {
 			// Only warn as we can continue processing the file
 			Errors = append(Errors,
-				fmt.Errorf("mappig-data invalid '%s': %s", text, err),
+				fmt.Errorf("mappig-data invalid '%s': %w", text, err),
 			)
 			continue
 		}

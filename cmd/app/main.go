@@ -22,7 +22,7 @@ var envRequired = []string{
 }
 var envDefaults = map[string]string{
 	"INTERFACE": "wg0",
-	//"MANAGE_ALL": "true",
+	// "MANAGE_ALL": "true",
 
 	"FILTER_PROTOCOL": "-1",
 	"FILTER_TABLE":    "-1",
@@ -39,7 +39,7 @@ func main() {
 	envChecks.HandleDefaults(envDefaults)
 
 	iface := os.Getenv("INTERFACE")
-	//MANAGE_ALL = os.Getenv("MANAGE_ALL")
+	// MANAGE_ALL = os.Getenv("MANAGE_ALL")
 
 	// Check if ip2Map has init-errors
 	for _, err := range ip2Map.Errors {
@@ -91,7 +91,10 @@ func main() {
 	// Subscribe to route-change events
 	routeSubChan, routeSubDoneChan := make(chan netlink.RouteUpdate), make(chan struct{})
 
-	netlink.RouteSubscribe(routeSubChan, routeSubDoneChan)
+	err = netlink.RouteSubscribe(routeSubChan, routeSubDoneChan)
+	if err != nil {
+		logger.Error.Fatalf("Couldn't subscribe to route-changes: %s", err)
+	}
 	go handleRouteEvents(routeSubChan, filterOptions, iface)
 
 	//# Initial Route-setup
