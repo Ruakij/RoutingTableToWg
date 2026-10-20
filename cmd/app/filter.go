@@ -2,17 +2,27 @@ package main
 
 import (
 	"github.com/vishvananda/netlink"
+	"golang.org/x/sys/unix"
 )
 
+// FilterOptions select the routes to translate, -1 selects all.
 type FilterOptions struct {
 	Table    int
 	Protocol int
 }
 
-func CheckFilter(options FilterOptions, route netlink.Route) bool {
-	if (options.Table != -1 && options.Table != route.Table) ||
-		(options.Protocol != -1 && options.Protocol != int(route.Protocol)) {
-		return false
+// routeFilter returns the filter and mask to list the matching routes of a link.
+func (o FilterOptions) routeFilter(ifindex int) (*netlink.Route, uint64) {
+	// RT_TABLE_UNSPEC selects all tables, otherwise only the main table is listed
+	filter := &netlink.Route{LinkIndex: ifindex, Table: unix.RT_TABLE_UNSPEC}
+	mask := netlink.RT_FILTER_OIF | netlink.RT_FILTER_TABLE
+
+	if o.Table > 0 {
+		filter.Table = o.Table
 	}
-	return true
+	if o.Protocol != -1 {
+		filter.Protocol = netlink.RouteProtocol(o.Protocol)
+		mask |= netlink.RT_FILTER_PROTOCOL
+	}
+	return filter, mask
 }
