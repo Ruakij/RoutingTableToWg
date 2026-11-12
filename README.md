@@ -81,7 +81,7 @@ services:
 
 ### 1.2.3. Without Docker
 
-Requires Go 1.27.3 or newer and Linux.
+Requires Go 1.27.4 or newer and Linux.
 
 Clone the Repository `git clone <URI>` and build the Program with `make build` (or `go build -o bin/routingtabletowg ./cmd/app`)
 
