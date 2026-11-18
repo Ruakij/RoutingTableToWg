@@ -26,7 +26,7 @@ RUN apk add --no-cache iproute2
 
 # Runs as root: configuring the Wireguard interface needs NET_ADMIN, which a
 # container grants to root only (no ambient capabilities for other users).
-FROM gcr.io/distroless/static:latest@sha256:448810357cc8e67b7208988abdba0f5ec3d3aebee0a5b13eb624979792cffc0f AS release
+FROM gcr.io/distroless/static:latest@sha256:1a64f46364620465ef9e9a8f5413757dfdf22695e050bbfd7303eeaf17a59383 AS release
 
 COPY --from=iproute2 /usr/share/iproute2/rt_protos /usr/share/iproute2/rt_tables /usr/share/iproute2/
 
